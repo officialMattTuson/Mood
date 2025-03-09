@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MaterialModule } from '../../core/modules/material.module';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  imports: [MaterialModule],
+  styleUrls: ['./login.component.scss'],
+  imports: [MaterialModule, RouterModule],
 })
 export class LoginComponent {
   constructor(
@@ -25,5 +25,9 @@ export class LoginComponent {
         console.error('Login error:', error);
       },
     });
+  }
+
+  register() {
+    // this.router.navigateByUrl('/register');
   }
 }
